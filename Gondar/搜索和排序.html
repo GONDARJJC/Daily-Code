@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        let even = x => (x % 2 == 0) ? true : false;
+        let iseven = function (x) {
+            return (x % 2 == 0) ? true : false
+        }
+        let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        console.log(nums.reverse());
+        console.log(nums.sort());
+        let compare = (a, b) => a - b;
+        console.log(nums.sort(compare));
+
+        var items = [
+            {
+                name: 'Edward',
+                value: 21
+			},
+            {
+                name: 'Sharpe',
+                value: 37
+			},
+            {
+                name: 'And',
+                value: 45
+			},
+            {
+                name: 'The',
+                value: -12
+			},
+            {
+                name: 'Magnetic'
+			},
+            {
+                name: 'Zeros',
+                value: 37
+			}
+		];
+
+        items.sort(function (a, b) {
+            if (a.value > b.value) {
+                return 1;
+            }
+            if (a.value < b.value) {
+                return -1;
+            }
+            // a 必须等于 b
+            return 0;
+        });
+        let a = [];
+        for (let i = 0; i < items.length; i++) {
+            a.push(items[i].name)
+        }
+        console.log(a)
+        let b = [];
+        for (let c of items) {
+            b.push(c.name)
+        }
+        console.log(b)
+    </script>
+</body>
+
+</html>
