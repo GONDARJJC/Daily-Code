@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>对象和原型链</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let food = 'cake';
+
+        let out = () => {
+            let fruit = 'apple';
+            let inn = () => {
+                console.log(food)
+                console.log(fruit)
+            }
+            return inn;
+        };
+        
+        let menu = out();
+        menu();
+        
+        //匿名函数自执行。和上面的效果相同
+        out()()
+    </script>
+</body>
+
+</html>
