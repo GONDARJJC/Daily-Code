@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		a {
+			display: inline-block;
+			text-decoration: none;
+			width: 50px;
+			height: 50px;
+			border: solid 1px;
+		}
+		
+		ul li {
+			width: 50px;
+			height: 50px;
+			border: solid 1px;
+			display: inline-block;
+			margin-right: -4px;
+			/*使用jquery方法时，要注释本行*/
+		}
+		
+		.finally-solve {
+			letter-spacing: -4px;
+			word-spacing: -4px;
+			/*根据不同字体字号或许需要做一定的调整*/
+			font-size: 0;
+		}
+		
+		.finally-solve li {
+			width: 50px;
+			height: 50px;
+			border: solid 1px;
+			font-size: 16px;
+			letter-spacing: normal;
+			word-spacing: normal;
+			display: inline-block;
+			*display: inline;
+			zoom: 1;
+		}
+	</style>
+	<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+	<script>
+		//jquery方法
+		$(function () {
+			$('.di').contents().filter(function () {
+				return this.nodeType === 3;
+			}).remove();
+		})
+	</script>
+</head>
+
+<body>
+
+<h1>inline-block的元素之间会存在“4px”的空白间距。</h1>
+	<!--没有修改-->
+	<div>
+		没有修改
+		<a href="">1</a>
+		<a href="">1</a>
+		<a href="">1</a>
+		<a href="">1</a>
+	</div>
+
+	<!--方法一-->
+	<div>
+		方法一
+		<a href="">
+		1</a><a href="">
+		1</a><a href="">
+		1</a><a href="">
+		1</a>
+	</div>
+
+	<!--方法二-->
+	<div>
+		方法二
+		<a href="">1</a
+		><a href="">1</a
+		><a href="">1</a
+		><a href="">1</a>
+	</div>
+	<!--方法三-->
+	<div>
+		方法三
+		<a href="">1</a>
+		<!--
+		--><a href="">1</a>
+		<!--
+		--><a href="">1</a>
+		<!--
+		--><a href="">1</a>
+	</div>
+
+	<!--方法四-->
+	<div>
+		方法四
+		<a href="">1</a><a href="">1</a><a href="">1</a><a href="">1</a>
+	</div>
+
+	<!--方法五-->
+	方法五
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+
+	<!--方法六-->
+	方法六
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+
+	<!--方法七-->
+	方法七
+	<ul class="di">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+
+	<!--方法八-->
+	方法八
+	<ul class="finally-solve">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+
+
+</body>
+
+</html>
