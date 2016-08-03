@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input {
+			display: block;
+			margin-bottom: 20px
+		}
+	</style>
+	<script src="jquery-3.0.0.js"></script>
+	<script>
+		
+		//jquery method
+		$(function () {
+			$('button').click(function () {
+				var vals = $('.datas');
+				for (var i = 0; i < vals.length; i++) {
+					if (vals.eq(i).val() === '') {
+						vals.eq(i).focus();
+						return false;
+					};
+				};
+			})
+		})
+
+		//js 判断顺序反了
+		window.onload = function () {
+			let btn = document.querySelector('button');
+			btn.onclick = function () {
+				let input = document.querySelectorAll('.datas');
+				for (let i = 0; i<input.length; i++) {
+					if (input[i].value == '') {
+						input[i].focus();
+					}
+				}
+			}
+		}
+
+		//js 判断顺序正确
+		window.onload = function () {
+			let btn = document.querySelector('button');
+			btn.onclick = function () {
+				let input = document.querySelectorAll('.datas');
+				console.log(input.length)
+				for (let i = input.length - 1; 0 <= i; i--) {
+					if (input[i].value == '') {
+						input[i].focus();
+					}
+				}
+			}
+		}
+
+		
+		//js 判断顺序反了
+		window.onload = function () {
+			let btn = document.querySelector('button');
+			btn.onclick = function () {
+				let input = document.querySelectorAll('.datas');
+				let ins = Array.prototype.slice.call(input);
+				for (let i of ins) {
+					if (i.value == '') {
+						i.focus();
+					}
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<input type="text" class="datas">
+	<input type="text" class="datas">
+	<input type="text" class="datas">
+	<input type="text" class="datas">
+	<input type="text" class="datas">
+	<button id="btn">确定</button>
+</body>
+
+</html>
