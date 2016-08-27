@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input {
+			display: block;
+			margin-bottom: 20px
+		}
+		div{
+			background-color: azure;
+			padding: 20px;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			let btn = document.querySelector('button');
+			btn.onclick = function () {
+				let input = document.querySelectorAll('.datas');
+				let ins = Array.prototype.slice.call(input);
+				ins.forEach(function (element, index, arr) {
+					console.log(element.value)
+					console.log(index)
+					console.log(arr)
+					console.log(this)
+				}, this)
+			};
+		}
+	</script>
+</head>
+
+<body>
+	<div>
+		<h1>概述</h1>
+		<p>forEach() 方法让数组的每一项都执行一次给定的函数。</p>
+		<h1>语法</h1>
+		<code>array.forEach(callback[, thisArg])</code>
+		<h1>参数</h1>
+		<h2>callback</h2> 在数组每一项上执行的函数，接收三个参数：
+		<h3>currentValue</h3> 当前项（指遍历时正在被处理那个数组项）的值。
+		<h3>index</h3> 当前项的索引（或下标）。
+		<h3>array</h3> 数组本身。
+		<h2>thisArg</h2> 可选参数。用来当作callback 函数内this的值的对象。
+	</div>
+
+	<input type="text" class="datas">
+	<input type="text" class="datas">
+	<input type="text" class="datas">
+	<button id="btn">确定</button>
+</body>
+
+</html>
