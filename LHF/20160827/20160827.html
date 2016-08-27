@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#container{width: 600px;padding: 20px;}
+		.inp{width: 400px;font-family: microsoft yahei,simsun;font-size: 1em;padding: 5px;}
+		.per{text-align: right;margin: 5px 0 5px 0;}
+		.bt{padding: 10px;}
+		#center{background-color: #a0a0a0;width: 400px;height: 200px;
+			position: fixed;top: 50%;left: 50%;margin:-100px 0 0 -200px;/*核心代码*/
+			display: none; }
+		  /*height: calc(100% - 37px);*/
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>html5新增表单元素</h1>
+		<p class="per">电话：<input type="tel" id="tel" class="inp"/></p>
+		<p class="per">邮箱：<input type="email" id="email" class="inp"/></p>
+		<p class="per">URL：<input type="url" id="url" class="inp"/></p>
+		<p class="per">日期：<input type="date" id="date" class="inp"/></p>
+		<p class="per">数字：<input type="number" id="number" class="inp"/></p>
+		<p class="per">比率：<input type="range" id="range" class="inp"/></p>
+		<p class="per">搜索：<input type="search" id="search" class="inp"/></p>
+		<p class="per">颜色：<input type="color" id="color" class="inp"/></p>
+		<p class="per">时间：<input type="time" id="time" class="inp"/></p>
+		<p class="per">UTC日期和时间：<input type="datetime" id="datetime" class="inp"/></p>
+		<p class="per">本地日期和时间：<input type="datetime-local" id="datetime-local" class="inp"/></p>
+		<p class="per">第几周：<input type="week" id="week" class="inp"/></p>
+		<p class="per">月份：<input type="month" id="month" class="inp"/></p>
+		<h1>两种获取验证码倒计时按钮的机制</h1>
+		<input type="button" onclick="interval(this)" class="bt" id="checkcode" value="获取验证码(setInterval)"/>
+		<input type="button" onclick="timeout(this)" class="bt" id="checkcode_o" value="获取验证码(setTimeout)"/>
+		<h1>让一个div居中</h1>
+		<input type="button" class="bt" value="让一个div居中" 
+				onclick="document.getElementById('center').style.display = 'block';"/>
+	</div>
+	<div id="center" onclick="this.style.display='none';"></div>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
